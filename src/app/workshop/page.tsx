@@ -86,19 +86,19 @@ export default function WorkshopPage() {
             method="POST"
             className="grid gap-3"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 text-gray-600 sm:grid-cols-2 gap-3">
               <input name="name" required placeholder="Full name" className="px-3 py-2 border rounded-md" />
               <input name="email" required type="email" placeholder="Email" className="px-3 py-2 border rounded-md" />
             </div>
 
-            <input name="phone" placeholder="Phone / WhatsApp" className="px-3 py-2 border rounded-md" />
+            <input name="phone" placeholder="Phone / WhatsApp" className="px-3 py-2 border rounded-md text-gray-600" />
 
-            <select name="package" className="px-3 py-2 border rounded-md">
-              <option value="standard">Standard — HK$ 680</option>
-              <option value="with-1-1">Standard + 1× 30min private session — HK$ 980</option>
+            <select name="package" className="px-3 py-2 border rounded-md text-gray-600">
+              <option value="standard">Standard — $ 99</option>
+              <option value="with-1-1">Standard + 1× 30min private session — $ 149</option>
             </select>
 
-            <textarea name="notes" rows={4} placeholder="Any relevant notes (injuries, preferences)" className="px-3 py-2 border rounded-md" />
+            <textarea name="notes" rows={4} placeholder="Any relevant notes (injuries, preferences)" className="px-3 py-2 border rounded-md text-gray-600" />
 
             {/* Redirect to thank-you after submission (Formspree supports redirect via _next param or use JS — here we add a hidden _next) */}
             <input type="hidden" name="_next" value="/workshop/thank-you" />
