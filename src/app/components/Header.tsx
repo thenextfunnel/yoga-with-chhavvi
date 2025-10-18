@@ -117,6 +117,9 @@ export default function Header() {
           <Link href="/workshop" onClick={() => setOpen(false)} className="block px-4 py-3 rounded-md hover:bg-gray-100">
             Workshop
           </Link>
+          <Link href="/gallery" onClick={() => setOpen(false)} className="block px-4 py-3 rounded-md hover:bg-gray-100">
+            Gallery
+          </Link>
           <Link href="/classes" onClick={() => setOpen(false)} className="block px-4 py-3 rounded-md hover:bg-gray-100">
             Classes
           </Link>
