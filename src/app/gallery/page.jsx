@@ -17,13 +17,13 @@ export default function GalleryPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gray-900 text-gray-100">
       {/* Header */}
-      <section className="text-center pt-28 pb-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-emerald-600 mb-3">
+      <section className="text-center pt-28 pb-10 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
           Yoga With Chhavvi Gallery
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto px-4">
+        <p className="text-gray-400 max-w-2xl mx-auto">
           Explore moments from our workshops, classes, and community sessions.
         </p>
       </section>
@@ -34,7 +34,7 @@ export default function GalleryPage() {
           {images.map((img, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 group"
+              className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-emerald-500/30 transition-shadow duration-300 group"
             >
               <Image
                 src={img.src}
@@ -43,8 +43,10 @@ export default function GalleryPage() {
                 height={400}
                 className="w-full object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
-                <p className="text-white text-sm font-medium mb-3">{img.alt}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
+                <p className="text-white text-sm font-medium mb-3 drop-shadow-md">
+                  {img.alt}
+                </p>
               </div>
             </div>
           ))}

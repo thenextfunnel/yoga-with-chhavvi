@@ -40,14 +40,15 @@ export default function ClassesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gray-900 text-gray-100">
       {/* Hero Section */}
-      <section className="pt-28 pb-10 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-emerald-600 mb-4">
+      <section className="pt-28 pb-10 text-center px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Yoga Classes Designed for You
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto px-6">
-          Strengthen your body, calm your mind, and find your balance through our curated yoga sessions — guided with care and intention.
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          Strengthen your body, calm your mind, and find your balance through
+          our curated yoga sessions — guided with care and intention.
         </p>
       </section>
 
@@ -56,31 +57,31 @@ export default function ClassesPage() {
         {classes.map((cls, i) => (
           <div
             key={i}
-            className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-emerald-50"
+            className="rounded-2xl overflow-hidden bg-gray-800 border border-gray-700 hover:border-emerald-600/60 hover:shadow-emerald-600/30 transition duration-300"
           >
             <div className="relative w-full h-52">
               <Image
                 src={cls.image}
                 alt={cls.title}
-                layout="fill"
-                objectFit="cover"
-                className="transition-transform duration-500 hover:scale-105"
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent"></div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-emerald-700 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 {cls.title}
               </h3>
-              <p className="text-gray-700 text-sm mb-4">{cls.description}</p>
+              <p className="text-gray-400 text-sm mb-4">{cls.description}</p>
 
-              <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
+              <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
                 <span>🕒 {cls.duration}</span>
                 <span>🎯 {cls.level}</span>
               </div>
 
               <Link
                 href="/workshop"
-                className="inline-block mt-2 px-5 py-2 bg-emerald-600 text-white rounded-full shadow hover:shadow-lg active:scale-95 transition-transform duration-200"
+                className="inline-block mt-2 px-5 py-2 bg-emerald-600 text-white rounded-full font-medium shadow-md hover:bg-emerald-700 active:scale-95 transition"
               >
                 Join This Class
               </Link>
@@ -90,16 +91,18 @@ export default function ClassesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-emerald-600 text-white text-center py-16">
+      <section className="bg-emerald-600 text-white text-center py-16 px-4">
         <h2 className="text-3xl font-bold mb-4">
           Ready to Begin Your Yoga Journey?
         </h2>
         <p className="text-white/90 mb-6">
-          Start with our <span className="font-semibold">10-Day Workshop</span> designed for strength, posture, and confidence.
+          Start with our{" "}
+          <span className="font-semibold">10-Day Workshop</span> designed for
+          strength, posture, and confidence.
         </p>
         <Link
           href="/workshop"
-          className="inline-block px-8 py-3 bg-white text-emerald-700 font-semibold rounded-full shadow-md hover:shadow-lg active:scale-95 transition-transform duration-200"
+          className="inline-block px-8 py-3 bg-white text-emerald-700 font-semibold rounded-full shadow-md hover:shadow-lg active:scale-95 transition"
         >
           Join the Workshop
         </Link>

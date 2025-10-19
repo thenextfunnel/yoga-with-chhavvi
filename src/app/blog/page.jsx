@@ -46,20 +46,21 @@ export default function BlogPage() {
   const featured = posts[0];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gray-900 text-gray-100">
       {/* Hero Section */}
-      <section className="text-center pt-28 pb-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-emerald-600 mb-3">
+      <section className="text-center pt-28 pb-10 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
           Yoga With Chhavvi Blog
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto px-4">
-          Tips, stories, and inspiration to help you deepen your yoga practice and build lasting balance.
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          Tips, stories, and inspiration to help you deepen your yoga practice
+          and build lasting balance.
         </p>
       </section>
 
       {/* Featured Post */}
       <section className="max-w-6xl mx-auto px-6 mb-16">
-        <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+        <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-emerald-500/30 transition duration-300 relative">
           <div className="relative w-full h-72 md:h-96">
             <Image
               src={featured.image}
@@ -67,18 +68,20 @@ export default function BlogPage() {
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent"></div>
-            <div className="absolute bottom-6 left-6 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent"></div>
+            <div className="absolute bottom-6 left-6 right-6 text-white">
               <p className="text-sm uppercase tracking-wider text-emerald-300 font-medium">
                 {featured.category}
               </p>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2">
                 {featured.title}
               </h2>
-              <p className="text-white/80 text-sm max-w-lg">{featured.description}</p>
+              <p className="text-white/80 text-sm max-w-2xl mb-3">
+                {featured.description}
+              </p>
               <Link
                 href={`/blog/${featured.id}`}
-                className="inline-block mt-3 px-5 py-2 bg-emerald-600 text-white rounded-full text-sm hover:shadow-lg active:scale-95 transition-transform duration-200"
+                className="inline-block mt-1 px-5 py-2 bg-emerald-600 rounded-full text-sm font-medium hover:bg-emerald-700 active:scale-95 transition"
               >
                 Read More
               </Link>
@@ -92,7 +95,7 @@ export default function BlogPage() {
         {posts.slice(1).map((post) => (
           <div
             key={post.id}
-            className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-emerald-50"
+            className="rounded-2xl overflow-hidden bg-gray-800 border border-gray-700 hover:border-emerald-600/60 hover:shadow-emerald-600/30 transition duration-300"
           >
             <div className="relative w-full h-52">
               <Image
@@ -101,18 +104,19 @@ export default function BlogPage() {
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent"></div>
             </div>
             <div className="p-6">
-              <p className="text-xs uppercase tracking-wider text-emerald-700 font-medium mb-2">
+              <p className="text-xs uppercase tracking-wider text-emerald-400 font-medium mb-2">
                 {post.category} • {post.date}
               </p>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 {post.title}
               </h3>
-              <p className="text-gray-700 text-sm mb-4">{post.description}</p>
+              <p className="text-gray-400 text-sm mb-4">{post.description}</p>
               <Link
                 href={`/blog/${post.id}`}
-                className="inline-block px-4 py-2 bg-emerald-600 text-white rounded-full text-sm hover:shadow-md active:scale-95 transition-transform duration-200"
+                className="inline-block px-4 py-2 bg-emerald-600 text-white rounded-full text-sm hover:bg-emerald-700 active:scale-95 transition"
               >
                 Read More
               </Link>
@@ -122,14 +126,15 @@ export default function BlogPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-emerald-600 text-white text-center py-16">
+      <section className="bg-emerald-600 text-white text-center py-16 px-4">
         <h2 className="text-3xl font-bold mb-4">Stay Inspired with Yoga Tips</h2>
-        <p className="text-white/90 mb-6 max-w-xl mx-auto px-4">
-          Subscribe to get weekly updates on mindfulness, wellness, and new yoga sessions from Chhavvi.
+        <p className="text-white/90 mb-6 max-w-xl mx-auto">
+          Subscribe to get weekly updates on mindfulness, wellness, and new yoga
+          sessions from Chhavvi.
         </p>
         <Link
           href="/contact"
-          className="inline-block px-8 py-3 bg-white text-emerald-700 font-semibold rounded-full shadow-md hover:shadow-lg active:scale-95 transition-transform duration-200"
+          className="inline-block px-8 py-3 bg-white text-emerald-700 font-semibold rounded-full shadow-md hover:shadow-lg active:scale-95 transition"
         >
           Get in Touch
         </Link>
